@@ -48,7 +48,7 @@ public class Contents extends JPanel implements ActionListener {
 
     public static int xV = 0;
     public static int yV = 1;
-    public static int zV = 9;
+    public static int zV = 10;
 
     public void move(){
         x = x + xV;

@@ -16,11 +16,11 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent event) {
                 if(event.getKeyChar()==KeyEvent.VK_ENTER && !Contents.wasHit) {
-                    Contents.yV = -2;
+                    Contents.yV = -3;
                     event.consume();
                 }
                 if(event.getKeyChar()==KeyEvent.VK_BACK_SLASH && !Contents.wasHit){
-                    Contents.yV = 2;
+                    Contents.yV = 3;
                     event.consume();
                 }
                 if(event.getKeyChar()==KeyEvent.VK_SPACE){
