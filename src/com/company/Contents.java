@@ -8,10 +8,11 @@ import java.awt.event.ActionListener;
 public class Contents extends JPanel implements ActionListener {
 
     private Image image;
-    private int x = 100, y = 200, z = 850, h = 200;
-    int score = 0;
+    public static int x = 100, y = 200, z = 850, h = 200;
+    static int score = 0;
     public static boolean wasHit = false;
     int finalScore = 0;
+    int highScore = 0;
 
 
     private Timer t;
@@ -33,10 +34,13 @@ public class Contents extends JPanel implements ActionListener {
         g2d.fillRect( z, 0, 50, h);
         g2d.fillRect( z, h + 225, 50, 300);
 
-        g2d.drawString("Score: " + score, 800, 25);
+
+        g2d.drawString("Highscore: " + highScore,777, 25 );
+        g2d.drawString("Score: " + score, 800, 45);
         g2d.drawString( "Enter = \uD83E\uDC15   Backslash = \uD83E\uDC17 ", 10, 25);
         if(wasHit){
             g2d.drawString("GAME OVER - Final Score: " + finalScore, 450, 300);
+            g2d.drawString("Press SPACE to play again", 450, 350);
         }
 
 
@@ -77,6 +81,8 @@ public class Contents extends JPanel implements ActionListener {
             yV = 0;
             zV = 0;
             finalScore = score;
+            if(score > highScore)
+                highScore = score;
             wasHit = true;
         } else {
             if(!wasHit)

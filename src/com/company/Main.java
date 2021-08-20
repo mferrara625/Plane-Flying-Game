@@ -23,6 +23,15 @@ public class Main {
                     Contents.yV = 2;
                     event.consume();
                 }
+                if(event.getKeyChar()==KeyEvent.VK_SPACE){
+                    Contents.yV = 1;
+                    Contents.zV = 9;
+                    Contents.y = 200;
+                    Contents.z = 850;
+                    Contents.score = 0;
+                    Contents.wasHit = false;
+                    event.consume();
+                }
             }
 
             @Override
