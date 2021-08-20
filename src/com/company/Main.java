@@ -16,11 +16,19 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent event) {
                 if(event.getKeyChar()==KeyEvent.VK_ENTER && !Contents.wasHit) {
-                    Contents.yV = -3;
+                    if(Contents.yV == 5 || Contents.yV == -5){
+                        Contents.yV = -4;
+                    } else{
+                        Contents.yV = -3;
+                    }
                     event.consume();
                 }
                 if(event.getKeyChar()==KeyEvent.VK_BACK_SLASH && !Contents.wasHit){
-                    Contents.yV = 3;
+                    if(Contents.yV == -5 || Contents.yV == 5){
+                        Contents.yV = 4;
+                    } else{
+                        Contents.yV = 3;
+                    }
                     event.consume();
                 }
                 if(event.getKeyChar()==KeyEvent.VK_SPACE){
@@ -50,6 +58,7 @@ public class Main {
         frame.setLocation(100, 50);
         frame.addKeyListener(listener);
         frame.add(new Contents());
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }

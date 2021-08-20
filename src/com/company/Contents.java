@@ -66,10 +66,12 @@ public class Contents extends JPanel implements ActionListener {
             xV = -1;
         }
 
-        if(y == 0){
-            yV = 1;
-        } else if (y == 450){
-            yV = -1;
+        if(y <= 0){
+            yV = 5;
+            score += 500;
+        } else if (y >= 450){
+            yV = -5;
+            score += 500;
         }
 
         if(z == -50){
